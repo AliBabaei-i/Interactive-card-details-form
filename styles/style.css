@@ -626,7 +626,7 @@ body {
 @media only screen and (max-width: 515px) {
 
     body {
-        background-image: url('/images/bg-main-mobile.png');
+        background-image: url('../images/bg-main-mobile.png');
         height: 100vh;
     }
 
