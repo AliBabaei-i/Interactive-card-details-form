@@ -708,9 +708,7 @@ body {
     .cards .front-image .information p {
         font-size: 9px;
     }
-
-
-
+    
     .form-layout {
         width: 327px;
         height: 328px;
@@ -750,6 +748,7 @@ body {
     .form-layout .info .date label {
         padding-left: 1px;
         color: var(--Very-dark-violet);
+        font-size: 10px;
     }
     .form-layout label {
         font-size: 11px;
