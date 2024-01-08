@@ -498,6 +498,12 @@ body {
     .form-layout {
         margin-right: 20px;
     }
+
+    .form-layout .don .alert button {
+        width: 69%;
+        height: 47px;
+        font-size: 14px;
+    }
 }
 
 @media screen and (max-width:980px) {
@@ -531,6 +537,8 @@ body {
         right: 15px;
         bottom: 88px;
     }
+
+
 }
 
 @media screen and (max-width:858px) {
@@ -623,7 +631,7 @@ body {
     }
 }
 
-@media only screen and (max-width: 515px) {
+@media only screen and (max-width: 797px) {
 
     body {
         background-image: url('../images/bg-main-mobile.png');
@@ -707,6 +715,7 @@ body {
         width: 327px;
         height: 328px;
         position: relative;
+        margin-right: 0;
     }
 
     .form-layout form .input {
@@ -755,5 +764,11 @@ body {
         width: 93%;
         height: 45px;
 
+    }
+
+    .form-layout .don .alert button {
+        width: 327px;
+        height: 47px;
+        font-size: 14px;
     }
 }
