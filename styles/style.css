@@ -716,6 +716,7 @@ body {
         height: 328px;
         position: relative;
         margin-right: 0;
+        overflow: visible;
     }
 
     .form-layout form .input {
@@ -729,6 +730,7 @@ body {
     .form-layout button {
         width: 325px;
         height: 50px;
+        overflow: visible;
     }
 
     .form-layout .info {
@@ -777,6 +779,7 @@ body {
         width: 327px;
         height: 47px;
         font-size: 14px;
+        overflow: visible;
     }
     
 }
