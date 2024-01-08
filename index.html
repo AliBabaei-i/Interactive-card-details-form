@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles/style.css">
+  <title>Interactive card details form</title>
+
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="cards">
+      <div class="front-image">
+        <img src="./images/bg-card-front.png" alt="front card" class="img1">
+        <p id="card-number">0000&nbsp;0000&nbsp;0000&nbsp;0000</p>
+        <div class="information">
+          <p id="host-name">JANE APPLESEED</p>
+          <div id="date">
+            <p id="date-year">00/</p>
+            <p id="date-month"> 00</p>
+          </div>
+        </div>
+        <p></p>
+      </div>
+      <div class="back-image">
+        <img src="./images/bg-card-back.png" alt="back card">
+        <p id="cvc-num">000</p>
+      </div>
+    </div>
+    <div class="form-layout">
+      <form action="/" method="get" id="info-form">
+        <div class="input">
+          <label for="card-holder-name">CARDHOLDER NAME</label>
+          <input type="text" maxlength="16" id="card-holder-name" name="cardholder-name"
+            placeholder="e.g. Jane Appleseed">
+          <span class="error">e</span>
+        </div>
+        <div class="input">
+          <label for="card-num">CARD NUMBER</label>
+          <input type="text" maxlength="16" id="card-num" class=".input-error" name="card-name"
+            placeholder="e.g. 1234 5678 9123 0000">
+          <span class="error">e</span>
+        </div>
+        <div class="info">
+          <div class="date">
+            <label for="year">Exp. Date (MM/YY)</label>
+            <div class="month-year">
+              <input type="text" maxlength="2" id="month" placeholder="MM" class="monthy">
+              <input type="text" maxlength="2" id="year" placeholder="YY" class="monthy">
+              <span id="year-error" class="error">e</span>
+            </div>
+          </div>
+          <div class="cvc">
+            <label for="cvc">CVC</label>
+            <input id="cvc" type="text" maxlength="3" placeholder="e.g. 123">
+            <span class="error">e</span>
+          </div>
+        </div>
+        <button type="submit">Confirm</button>
+      </form>
+      <div id="thanks" class="don">
+        <img src="./images/icon-complete.svg" alt="">
+        <div class="alert">
+          <div class="thanks">
+            <p>THANK YOU!</p>
+            <p>We’ve added your card details</p>
+          </div>
+          <button type="submit">CONTINUE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script defer src="./scripts/main.js"></script>
+</body>
+
+</html>

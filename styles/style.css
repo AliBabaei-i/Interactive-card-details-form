@@ -1,0 +1,759 @@
+@import url('./reset.css');
+
+:root {
+    --Red: hsl(0, 100%, 66%);
+    --White: hsl(0, 0%, 100%);
+    --Light-grayish-violet: hsl(270, 3%, 87%);
+    --Dark-grayish-violet: hsl(279, 6%, 55%);
+    --Very-dark-violet: hsl(278, 68%, 11%);
+}
+
+@font-face {
+    font-family: Space Grotesk;
+    src: url("./SpaceGrotesk-Medium.ttf") format("ttf");
+    /* url("./SpaceGrotesk-Medium.woff") format("woff"); */
+}
+
+
+* {
+    /* overflow: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none; */
+}
+
+.body::-webkit-scrollbar {
+    /* display: none; */
+}
+
+body {
+    direction: ltr;
+    font-size: 18px;
+    font-family: Space Grotesk;
+    background-color: #f2f2f2;
+    background-image: url("../images/bg-main-desktop.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* width: 1440px; */
+}
+
+.container {
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.cards {
+    width: 37.5694%;
+    /* height: 36.5972%; */
+    /* width: 541px; */
+    height: 527px;
+}
+
+
+.cards .front-image {
+    left: 0;
+    top: 0;
+    position: relative;
+    text-align: center;
+    margin-right: 92px;
+    height: 243px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+
+.cards .front-image::before {
+    content: '';
+    display: inline-block;
+    width: 46.96px;
+    height: 47px;
+    -moz-border-radius: 7.5px;
+    -webkit-border-radius: 7.5px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top: 32px;
+    left: 49px;
+    border-color: #979797;
+}
+
+.cards .front-image::after {
+    content: '';
+    display: inline-block;
+    width: 21.13px;
+    height: 21.13px;
+    -moz-border-radius: 7.5px;
+    -webkit-border-radius: 7.5px;
+    border: 1px solid white;
+    border-radius: 50%;
+    position: absolute;
+    top: 45px;
+    left: 110px;
+
+}
+
+.cards .front-image #card-number {
+    bottom: 65px;
+    position: absolute;
+    height: 36px;
+    color: #fff;
+    font-size: 30px;
+    letter-spacing: 3px;
+}
+
+.cards .front-image .information {
+    display: flex;
+    color: #fff;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 383.14px;
+    font-size: 18px;
+    bottom: 25px;
+}
+
+.cards .front-image .information #host-name {
+    letter-spacing: 3px;
+}
+
+.cards .front-image .information #date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards .front-image .information #date p {
+    letter-spacing: 3px;
+}
+
+.cards .back-image {
+    right: 0;
+    bottom: 0;
+    position: relative;
+    margin-left: 94px;
+    margin-top: 34px
+}
+
+.cards .back-image #cvc-num {
+    position: absolute;
+    right: 81px;
+    bottom: 118px;
+    letter-spacing: 3px;
+    text-align: center;
+    color: #fff;
+    font-size: medium;
+}
+
+.form-layout #info-form .input input:focus {
+    outline: none;
+    border: 2px solid;
+    border-radius: 8px;
+    border-top-color: hsl(249, 99%, 64%);
+    border-left-color: hsl(249, 99%, 64%);
+    border-right-color: hsl(278, 94%, 30%);
+    border-bottom-color: hsl(278, 94%, 30%);
+
+}
+
+.form-layout {
+    width: 381px;
+    height: 388px;
+    position: relative;
+}
+
+.form-layout form {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    overflow: visible;
+    position: absolute;
+}
+
+.form-layout form span.error {
+    visibility: hidden;
+    margin: 4px 0;
+    font-size: 12px;
+    color: var(--Red);
+    height: 16px;
+    display: block;
+    padding-left: 3px;
+}
+
+.form-layout form span error {
+    visibility: visible;
+    margin: 4px 0;
+    font-size: 12px;
+    color: var(--Red);
+    height: 16px;
+    display: block;
+    padding-left: 3px;
+}
+
+.form-layout label {
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 500;
+    color: var(--Very-dark-violet);
+}
+
+.form-layout form .input {
+    width: 100%;
+    height: auto;
+    margin-bottom: 12px;
+}
+
+.form-layout .input input {
+    width: 93%;
+    height: 45px;
+    border-radius: 8px;
+    box-shadow: none;
+    border: none;
+    padding-left: 17px;
+    font-size: 18px;
+    color: var(--Very-dark-violet);
+    font-weight: 500;
+    margin: 12px 0 2px 2px;
+}
+
+.form-layout input::placeholder {
+    color: var(--Light-grayish-violet);
+    font-size: 18px;
+}
+
+
+.form-layout .info {
+    width: 98%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-direction: row;
+}
+
+.form-layout .info .date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 92px;
+    width: 170px;
+}
+
+.form-layout .info .date .month-year {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+
+.form-layout .info .date .month-year .monthy {
+    width: 67px;
+    height: 43px;
+    border-radius: 8px;
+    box-shadow: none;
+    border: transparent;
+    padding-left: 8px;
+    font-size: 18px;
+    color: var(--Very-dark-violet);
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.form-layout .info .date .month-year #year-error {
+    width: 84px;
+}
+
+.form-layout .info .cvc {
+    height: 92px;
+    width: 191px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding-right: 5px;
+}
+
+
+.form-layout .info .cvc input {
+    width: 180px;
+    height: 45px;
+    border-radius: 8px;
+    box-shadow: none;
+    border: none;
+    padding-left: 8px;
+    font-size: 18px;
+    color: var(--Very-dark-violet);
+    font-weight: 500;
+    margin: 8px 2px 1px 2px;
+}
+
+.form-layout .info .date .month-year input:focus {
+    outline: none;
+    border: 2px solid;
+    border-radius: 8px;
+    border-top-color: hsl(249, 99%, 64%);
+    border-left-color: hsl(249, 99%, 64%);
+    border-right-color: hsl(278, 94%, 30%);
+    border-bottom-color: hsl(278, 94%, 30%);
+}
+
+.form-layout .info .cvc input:focus {
+    outline: none;
+    border: 2px solid;
+    border-radius: 8px;
+    border-top-color: hsl(249, 99%, 64%);
+    border-left-color: hsl(249, 99%, 64%);
+    border-right-color: hsl(278, 94%, 30%);
+    border-bottom-color: hsl(278, 94%, 30%);
+}
+
+
+.form-layout button:hover {
+    background-color: #f2f2f2;
+    border-radius: 0px;
+    /* font-size: 18px; */
+    color: var(--Very-dark-violet);
+    border: 1px solid var(--Very-dark-violet);
+}
+
+.form-layout button {
+    width: 374px;
+    height: 53px;
+    background-color: var(--Very-dark-violet);
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: none;
+    border: none;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    font-size: 18px;
+}
+
+.form-layout .don {
+    width: 381px;
+    height: 291px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    position: absolute;
+    text-align: center;
+    visibility: hidden;
+}
+
+.form-layout .don .alert {
+    width: 381px;
+    height: 176px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.form-layout .don .alert .thanks {
+    height: 75px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.form-layout .don .alert .thanks :nth-child(1) {
+    font-size: 28px;
+    color: var(--Very-dark-violet);
+}
+
+.form-layout .don .alert .thanks :nth-child(2) {
+    font-size: 18px;
+    color: var(--Dark-grayish-violet);
+}
+
+.form-layout .don .alert button {
+    width: 100%;
+    height: 53px;
+    background-color: var(--Very-dark-violet);
+}
+
+.form-layout .don .alert button:hover {
+    background-color: #f2f2f2;
+    border-radius: 0px;
+    /* font-size: 18px; */
+    color: var(--Very-dark-violet);
+    border: 1px solid var(--Very-dark-violet);
+}
+
+
+@media screen and (max-width: 1288px) {
+    .cards .front-image::before {
+        left: 9px;
+    }
+
+    .cards .front-image::after {
+        left: 140px;
+    }
+
+    .cards .back-image #cvc-num {
+        right: 0;
+    }
+
+}
+
+@media screen and (max-width: 1278px) {
+    .cards .front-image::before {
+        left: 61px;
+    }
+
+    .cards .front-image::after {
+        left: 140px;
+    }
+
+    .cards .back-image #cvc-num {
+        right: 0;
+    }
+
+    .cards .front-image {
+        width: 100%;
+    }
+
+    .cards .front-image img {
+        width: 100%;
+        height: 100%;
+    }
+
+}
+
+@media screen and (max-width:1100px) {
+    .cards .front-image img {
+        height: 199px;
+    }
+
+    .cards .front-image #card-number {
+        font-size: 21px;
+    }
+
+    .cards .front-image .information p {
+        font-size: 14px;
+
+    }
+
+    .cards .front-image .information #host-name {
+        margin-left: 10px;
+    }
+
+    .cards .front-image .information #date {
+        margin-right: 10px;
+    }
+
+    .cards .front-image img {
+        height: 217px;
+    }
+
+    .cards .front-image::before {
+        top: 47px;
+        width: 41.96px;
+        height: 41px
+    }
+
+    .cards .front-image::after {
+        top: 57px;
+        left: 121px;
+    }
+
+    .cards .back-image {
+        margin-left: 0;
+    }
+
+    .cards .back-image img {
+        width: 100%;
+        height: 100%;
+        margin-left: 63px;
+        margin-top: 9px;
+    }
+
+    .cards .back-image #cvc-num {
+        right: -16px;
+        bottom: 102px
+    }
+
+    .form-layout button {
+        width: 380px
+    }
+}
+
+@media screen and (max-width:1068px) {
+    .form-layout {
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width:980px) {
+    .form-layout {
+        margin-right: 40px;
+    }
+
+    .cards .front-image .information {
+
+        width: 317.14px;
+
+    }
+
+    .cards .back-image #cvc-num {
+        right: 16px;
+        bottom: 97px;
+    }
+}
+
+@media screen and (max-width:890px) {
+    .form-layout label {
+        padding-left: 54px;
+    }
+
+    .form-layout .info .date label {
+        font-size: 11px;
+        padding-left: 20px;
+    }
+
+    .cards .back-image #cvc-num {
+        right: 15px;
+        bottom: 88px;
+    }
+}
+
+@media screen and (max-width:858px) {
+    .cards .front-image #card-number {
+        font-size: medium;
+    }
+
+    .cards .front-image .information {
+        width: 298.14px;
+        font-size: small;
+        bottom: 50px
+    }
+
+    .cards .front-image .information p {
+        font-size: 11px;
+    }
+
+    .cards .front-image::before {
+        top: 76px;
+        left: 28px;
+        width: 37px;
+        height: 37px;
+    }
+
+    .cards .front-image::after {
+        top: 87px;
+        left: 77px;
+        width: 16px;
+        height: 16px
+    }
+
+    .cards .front-image img {
+        height: 159px;
+    }
+
+    .cards .back-image img {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .cards .back-image #cvc-num {
+        right: 31px;
+        bottom: 77px
+    }
+
+    .form-layout {
+        width: 322px;
+        height: 350px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .form-layout .info .cvc {
+        height: 89px;
+        width: 150px
+    }
+
+    .form-layout .info .cvc input {
+        width: 141px;
+    }
+
+    .form-layout label {
+        padding-left: 0;
+    }
+
+    .form-layout .info .date .month-year .monthy {
+
+        height: 45px;
+
+    }
+
+    .form-layout .info .date .month-year {
+
+        margin-right: 15px;
+    }
+
+    .form-layout form .input label {
+        padding-left: 123px;
+    }
+
+    .form-layout .info .date label {
+
+        padding-left: 1px;
+        color: white;
+    }
+
+    .form-layout button {
+        width: 320px;
+    }
+}
+
+@media only screen and (max-width: 515px) {
+
+    body {
+        background-image: url('/images/bg-main-mobile.png');
+        height: 100vh;
+    }
+
+    .container {
+        height: 100%;
+        width: 87%;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin-right: 24px;
+        margin-left: 24px;
+    }
+
+    .container .cards {
+        width: 343px;
+        height: 251px;
+        position: relative;
+        /* flex-direction: column-reverse; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container .cards .back-image {
+        width: 286px;
+        height: 157px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: 0;
+    }
+
+    .cards .back-image #cvc-num {
+        font-size: 9px;
+        bottom: 75px;
+    }
+
+    .container .cards .front-image {
+        width: 286px;
+        height: 157px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        top: 93px;
+        z-index: 1;
+    }
+
+    .cards .front-image #card-number {
+        font-size: 18px;
+        bottom: 32px;
+    }
+
+    .cards .front-image::before {
+        top: 25px;
+        left: 21px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .cards .front-image::after {
+        top: 32px;
+        left: 63px;
+        width: 13px;
+        height: 13px;
+    }
+
+    .cards .front-image .information {
+        bottom: 16px;
+        width: 282.14px
+    }
+
+    .cards .front-image .information p {
+        font-size: 9px;
+    }
+
+
+
+    .form-layout {
+        width: 327px;
+        height: 328px;
+        position: relative;
+    }
+
+    .form-layout form .input {
+        width: 100%;
+        height: 89px;
+        margin-bottom: 12px;
+    }
+
+    .form-layout button {
+        width: 325px;
+        height: 50px;
+    }
+
+    .form-layout .info {
+        width: 100%;
+        height: 89px;
+        margin-bottom: 5px;
+    }
+
+    .form-layout .info .date {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        height: auto;
+        width: 150px;
+    }
+
+    .form-layout label {
+        font-size: 11px;
+    }
+
+    .form-layout .info .date .month-year .monthy {
+        width: 61px;
+        margin-top: 8px;
+    }
+
+    .form-layout .info .cvc {
+        height: 92px;
+        width: 164px;
+
+        padding-right: 3px;
+    }
+
+    .form-layout .info .cvc input {
+        width: 93%;
+        height: 45px;
+
+    }
+}
