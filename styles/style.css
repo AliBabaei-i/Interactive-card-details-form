@@ -723,7 +723,9 @@ body {
         height: 89px;
         margin-bottom: 12px;
     }
-
+    .form-layout form .input label {
+        padding-left: 0;
+    }
     .form-layout button {
         width: 325px;
         height: 50px;
@@ -743,11 +745,16 @@ body {
         height: auto;
         width: 150px;
     }
-
+    .form-layout .info .date label {
+        padding-left: 1px;
+        color: var(--Very-dark-violet);
+    }
     .form-layout label {
         font-size: 11px;
     }
-
+    .form-layout .info .date .month-year {
+        margin-right: 2px;
+    }
     .form-layout .info .date .month-year .monthy {
         width: 61px;
         margin-top: 8px;
@@ -771,4 +778,5 @@ body {
         height: 47px;
         font-size: 14px;
     }
+    
 }
