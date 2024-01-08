@@ -33,6 +33,7 @@ body {
     background-image: url("../images/bg-main-desktop.png");
     background-repeat: no-repeat;
     background-size: contain;
+    overflow:hidden;
 }
 
 .container {
