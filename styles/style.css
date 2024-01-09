@@ -10,8 +10,8 @@
 
 @font-face {
     font-family: Space Grotesk;
-    src: url("./SpaceGrotesk-Medium.ttf") format("ttf"),
-         url("./SpaceGrotesk-Medium.woff") format("woff");
+    src: url("./SpaceGrotesk-Medium.ttf") format("ttf");
+    /* url("./SpaceGrotesk-Medium.woff") format("woff"); */
 }
 
 
@@ -33,7 +33,6 @@ body {
     background-image: url("../images/bg-main-desktop.png");
     background-repeat: no-repeat;
     background-size: contain;
-    overflow:hidden;
 }
 
 .container {
@@ -397,17 +396,29 @@ body {
 }
 
 
-@media screen and (max-width: 1288px) {
+@media screen and (max-width: 1440px) {
+    .cards .front-image {
+        margin-left: 0px;
+        overflow: visible;
+        width: 461px;
+    }
+
     .cards .front-image::before {
-        left: 9px;
+        left: 51px;
     }
 
     .cards .front-image::after {
-        left: 140px;
+        left: 115px;
+    }
+
+    .cards .back-image {
+        margin-left: 0px;
+        overflow: visible;
+        width: 461px;
     }
 
     .cards .back-image #cvc-num {
-        right: 0;
+        right: 100;
     }
 
 }
@@ -422,7 +433,7 @@ body {
     }
 
     .cards .back-image #cvc-num {
-        right: 0;
+        right: 91px;
     }
 
     .cards .front-image {
@@ -432,6 +443,15 @@ body {
     .cards .front-image img {
         width: 100%;
         height: 100%;
+    }
+
+    .cards .back-image {
+        width: 100%;
+    }
+
+    .cards .back-image img {
+        width: 98%;
+        height: 243px;
     }
 
 }
@@ -480,13 +500,13 @@ body {
     .cards .back-image img {
         width: 100%;
         height: 100%;
-        margin-left: 63px;
+        margin-left: 0px;
         margin-top: 9px;
     }
 
     .cards .back-image #cvc-num {
-        right: -16px;
-        bottom: 102px
+        right: 60px;
+        bottom: 107px
     }
 
     .form-layout button {
@@ -518,7 +538,7 @@ body {
     }
 
     .cards .back-image #cvc-num {
-        right: 16px;
+        right: 63px;
         bottom: 97px;
     }
 }
@@ -533,8 +553,17 @@ body {
         padding-left: 20px;
     }
 
+    .cards .front-image img {
+        height: 191px;
+    }
+
+    .cards .front-image .information {
+        width: 306.14px;
+        bottom: 39px;
+    }
+
     .cards .back-image #cvc-num {
-        right: 15px;
+        right: 66px;
         bottom: 88px;
     }
 
@@ -571,7 +600,7 @@ body {
     }
 
     .cards .front-image img {
-        height: 159px;
+        height: 176px;
     }
 
     .cards .back-image img {
@@ -580,8 +609,8 @@ body {
     }
 
     .cards .back-image #cvc-num {
-        right: 31px;
-        bottom: 77px
+        right: 50px;
+        bottom: 84px;
     }
 
     .form-layout {
@@ -590,6 +619,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        overflow: visible;
     }
 
     .form-layout .info .cvc {
@@ -631,16 +661,19 @@ body {
     }
 }
 
+
+
 @media only screen and (max-width: 797px) {
 
     body {
         background-image: url('../images/bg-main-mobile.png');
         height: 100vh;
+        overflow: hidden;
     }
 
     .container {
         height: 100%;
-        width: 87%;
+        width: 91%;
         flex-direction: column;
         justify-content: space-evenly;
         margin-right: 24px;
@@ -651,10 +684,10 @@ body {
         width: 343px;
         height: 251px;
         position: relative;
-        /* flex-direction: column-reverse; */
         display: flex;
         justify-content: center;
         align-items: center;
+        overflow: visible;
     }
 
     .container .cards .back-image {
@@ -708,13 +741,17 @@ body {
     .cards .front-image .information p {
         font-size: 9px;
     }
-    
+
     .form-layout {
         width: 327px;
-        height: 328px;
+        height: 352px;
         position: relative;
         margin-right: 0;
-        overflow: visible;
+    }
+
+    .form-layout form .input .holder {
+        color: #fff;
+
     }
 
     .form-layout form .input {
@@ -722,16 +759,18 @@ body {
         height: 89px;
         margin-bottom: 12px;
     }
+
     .form-layout form .input #cant {
         position: absolute;
     }
+
     .form-layout form .input label {
         padding-left: 0;
     }
+
     .form-layout button {
         width: 325px;
         height: 50px;
-        overflow: visible;
     }
 
     .form-layout .info {
@@ -748,17 +787,21 @@ body {
         height: auto;
         width: 150px;
     }
+
     .form-layout .info .date label {
         padding-left: 1px;
         color: var(--Very-dark-violet);
         font-size: 10px;
     }
+
     .form-layout label {
         font-size: 11px;
     }
+
     .form-layout .info .date .month-year {
         margin-right: 2px;
     }
+
     .form-layout .info .date .month-year .monthy {
         width: 61px;
         margin-top: 8px;
@@ -783,5 +826,16 @@ body {
         font-size: 14px;
         overflow: visible;
     }
-    
+
+    .form-layout .don {
+        width: 331px;
+    }
+
+}
+
+@media screen and (max-width:717px) {
+    .form-layout form .input .holder {
+        color: var(--Very-dark-violet);
+
+    }
 }
