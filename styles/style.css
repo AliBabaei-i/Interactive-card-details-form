@@ -714,6 +714,11 @@ body {
         z-index: 1;
     }
 
+    .cards .front-image img {
+        height: 157px;
+        width: 93%;
+    }
+
     .cards .front-image #card-number {
         font-size: 18px;
         bottom: 32px;
@@ -735,7 +740,11 @@ body {
 
     .cards .front-image .information {
         bottom: 16px;
-        width: 282.14px
+        width: 268.14px;
+    }
+
+    .cards .back-image img {
+        width: 95%;
     }
 
     .cards .front-image .information p {
@@ -819,11 +828,7 @@ body {
         height: 45px;
 
     }
-    
-     .form-layout .don {
-        width: 320px;
-    }
-    
+
     .form-layout .don .alert button {
         width: 313px;
         height: 47px;
@@ -831,11 +836,14 @@ body {
         overflow: visible;
     }
 
+    .form-layout .don {
+        width: 320px;
+    }
+
 }
 
 @media screen and (max-width:717px) {
     .form-layout form .input .holder {
         color: var(--Very-dark-violet);
-
     }
 }
