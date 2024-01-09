@@ -23,7 +23,7 @@ Users should be able to:
 
 ### Screenshot
 
-![here](![Screenshot 2024-01-08 191721](https://github.com/AliBabaei-i/Interactive-card-details-form/assets/155062135/124ce4bb-ce59-44c3-9e22-929abb0a4db1))
+(![Screenshot 2024-01-08 191721](https://github.com/AliBabaei-i/Interactive-card-details-form/assets/155062135/124ce4bb-ce59-44c3-9e22-929abb0a4db1)
 
 ### Links
 
