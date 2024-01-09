@@ -819,16 +819,16 @@ body {
         height: 45px;
 
     }
-
+    
+     .form-layout .don {
+        width: 320px;
+    }
+    
     .form-layout .don .alert button {
-        width: 327px;
+        width: 313px;
         height: 47px;
         font-size: 14px;
         overflow: visible;
-    }
-
-    .form-layout .don {
-        width: 331px;
     }
 
 }
