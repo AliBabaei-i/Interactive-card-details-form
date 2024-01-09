@@ -814,6 +814,7 @@ body {
     .form-layout .info .date .month-year .monthy {
         width: 61px;
         margin-top: 8px;
+        margin-left: 2px;
     }
 
     .form-layout .info .cvc {
