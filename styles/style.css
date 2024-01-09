@@ -722,6 +722,9 @@ body {
         height: 89px;
         margin-bottom: 12px;
     }
+    .form-layout form .input #cant {
+        position: absolute;
+    }
     .form-layout form .input label {
         padding-left: 0;
     }
