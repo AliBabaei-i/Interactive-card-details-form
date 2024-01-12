@@ -9,9 +9,9 @@
 }
 
 @font-face {
-    font-family: Space Grotesk;
-    src: url("./SpaceGrotesk-Medium.ttf") format("ttf");
-    /* url("./SpaceGrotesk-Medium.woff") format("woff"); */
+    font-family: Space-Grotesk;
+    src: url("./SpaceGrotesk-Medium.ttf") format("ttf"),
+        url("./SpaceGrotesk-Medium.woff") format("woff");
 }
 
 
@@ -28,11 +28,11 @@
 body {
     direction: ltr;
     font-size: 18px;
-    font-family: Space Grotesk;
+    font-family: Space-Grotesk;
     background-color: #f2f2f2;
-    background-image: url("../images/bg-main-desktop.png");
+    background-image: linear-gradient(to bottom right, #230b30, #4a1e43, #322250);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 483px auto;
 }
 
 .container {
@@ -98,12 +98,14 @@ body {
 }
 
 .cards .front-image #card-number {
+    width: 388px;
     bottom: 65px;
     position: absolute;
     height: 36px;
     color: #fff;
     font-size: 30px;
     letter-spacing: 3px;
+    text-align: left;
 }
 
 .cards .front-image .information {
@@ -151,7 +153,6 @@ body {
 
 .form-layout #info-form .input input:focus {
     outline: none;
-    border: 2px solid;
     border-radius: 8px;
     border-top-color: hsl(249, 99%, 64%);
     border-left-color: hsl(249, 99%, 64%);
@@ -160,10 +161,11 @@ body {
 
 }
 
+
 .form-layout {
     width: 381px;
-    height: 388px;
-    position: relative;
+    /* height: 388px;
+    position: relative; */
 }
 
 .form-layout form {
@@ -174,11 +176,11 @@ body {
     align-items: center;
     flex-direction: column;
     overflow: visible;
-    position: absolute;
+    /* position: absolute; */
 }
 
 .form-layout form span.error {
-    visibility: hidden;
+    /* visibility: hidden; */
     margin: 4px 0;
     font-size: 12px;
     color: var(--Red);
@@ -221,6 +223,13 @@ body {
     color: var(--Very-dark-violet);
     font-weight: 500;
     margin: 12px 0 2px 2px;
+    border: 2px solid;
+    border-color: transparent;
+    background-color: #fff;
+}
+
+.form-layout .input input:valid {
+    background: #fff;
 }
 
 .form-layout input::placeholder {
@@ -231,7 +240,6 @@ body {
 
 .form-layout .info {
     width: 98%;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -243,7 +251,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     height: 92px;
     width: 170px;
 }
@@ -259,7 +267,7 @@ body {
 
 .form-layout .info .date .month-year .monthy {
     width: 67px;
-    height: 43px;
+    height: 44px;
     border-radius: 8px;
     box-shadow: none;
     border: transparent;
@@ -268,6 +276,10 @@ body {
     color: var(--Very-dark-violet);
     font-weight: 500;
     margin-top: 10px;
+    margin-left: 4px;
+    border: 2px solid;
+    border-color: transparent;
+    background-color: #fff;
 }
 
 .form-layout .info .date .month-year #year-error {
@@ -296,11 +308,13 @@ body {
     color: var(--Very-dark-violet);
     font-weight: 500;
     margin: 8px 2px 1px 2px;
+    border: 2px solid;
+    border-color: transparent;
+    background-color: #fff;
 }
 
 .form-layout .info .date .month-year input:focus {
     outline: none;
-    border: 2px solid;
     border-radius: 8px;
     border-top-color: hsl(249, 99%, 64%);
     border-left-color: hsl(249, 99%, 64%);
@@ -310,7 +324,6 @@ body {
 
 .form-layout .info .cvc input:focus {
     outline: none;
-    border: 2px solid;
     border-radius: 8px;
     border-top-color: hsl(249, 99%, 64%);
     border-left-color: hsl(249, 99%, 64%);
@@ -344,13 +357,13 @@ body {
 .form-layout .don {
     width: 381px;
     height: 291px;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
-    position: absolute;
+    /* position: absolute; */
     text-align: center;
-    visibility: hidden;
+    /* visibility: hidden; */
 }
 
 .form-layout .don .alert {
@@ -462,7 +475,8 @@ body {
     }
 
     .cards .front-image #card-number {
-        font-size: 21px;
+        font-size: 23px;
+        width: 324px;
     }
 
     .cards .front-image .information p {
@@ -527,30 +541,49 @@ body {
 }
 
 @media screen and (max-width:980px) {
+    body {
+        background-size: 434px auto;
+    }
+
     .form-layout {
         margin-right: 40px;
     }
 
     .cards .front-image .information {
-
+        bottom: 40px;
         width: 317.14px;
 
+    }
+
+    .cards .front-image::before {
+        left: 40px;
+    }
+
+    .cards .front-image::after {
+        top: 58px;
+        left: 99px;
     }
 
     .cards .back-image #cvc-num {
         right: 63px;
         bottom: 97px;
     }
+
+    .cards .front-image img {
+        height: 189px;
+    }
 }
 
 @media screen and (max-width:890px) {
-    .form-layout label {
-        padding-left: 54px;
+    body {
+        background-size: 393px auto;
     }
+
+
 
     .form-layout .info .date label {
         font-size: 11px;
-        padding-left: 20px;
+        padding-left: 6px;
     }
 
     .cards .front-image img {
@@ -565,6 +598,11 @@ body {
     .cards .back-image #cvc-num {
         right: 66px;
         bottom: 88px;
+    }
+
+    .cards .front-image #card-number {
+        font-size: 19px;
+        width: 271px;
     }
 
 
@@ -613,6 +651,11 @@ body {
         bottom: 84px;
     }
 
+    .cards .front-image #card-number {
+        font-size: 19px;
+        width: 270px;
+    }
+
     .form-layout {
         width: 322px;
         height: 350px;
@@ -628,7 +671,7 @@ body {
     }
 
     .form-layout .info .cvc input {
-        width: 141px;
+        width: 135px;
     }
 
     .form-layout label {
@@ -636,9 +679,12 @@ body {
     }
 
     .form-layout .info .date .month-year .monthy {
-
+        width: 59px;
         height: 45px;
+    }
 
+    .form-layout .info .date .month-year #month {
+        margin-left: 9px;
     }
 
     .form-layout .info .date .month-year {
@@ -646,14 +692,11 @@ body {
         margin-right: 15px;
     }
 
-    .form-layout form .input label {
-        padding-left: 123px;
-    }
+
 
     .form-layout .info .date label {
 
         padding-left: 1px;
-        color: white;
     }
 
     .form-layout button {
@@ -666,7 +709,8 @@ body {
 @media only screen and (max-width: 797px) {
 
     body {
-        background-image: url('../images/bg-main-mobile.png');
+        background-image: linear-gradient(to bottom right, #230b30, #4a1e43, #322250);
+        background-size: auto 240px;
         height: 100vh;
         overflow: hidden;
     }
@@ -675,7 +719,7 @@ body {
         height: 100%;
         width: 91%;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: space-between;
         margin-right: 24px;
         margin-left: 24px;
     }
@@ -688,6 +732,7 @@ body {
         justify-content: center;
         align-items: center;
         overflow: visible;
+        margin-top: 32px;
     }
 
     .container .cards .back-image {
@@ -720,8 +765,9 @@ body {
     }
 
     .cards .front-image #card-number {
-        font-size: 18px;
+        font-size: 16px;
         bottom: 32px;
+        width: 237px;
     }
 
     .cards .front-image::before {
@@ -756,17 +802,19 @@ body {
         height: 352px;
         position: relative;
         margin-right: 0;
+        margin-bottom: 45px;
     }
 
-    .form-layout form .input .holder {
-        color: #fff;
 
-    }
 
     .form-layout form .input {
         width: 100%;
         height: 89px;
         margin-bottom: 12px;
+    }
+
+    .form-layout .input input {
+        width: 92%;
     }
 
     .form-layout form .input #cant {
@@ -786,7 +834,7 @@ body {
         width: 100%;
         height: 89px;
         margin-bottom: 5px;
-        margin-top: 8px;
+        margin-top: 12px;
     }
 
     .form-layout .info .date {
@@ -795,7 +843,7 @@ body {
         align-items: center;
         justify-content: space-evenly;
         height: auto;
-        width: 150px;
+        width: 161px;
     }
 
     .form-layout .info .date label {
@@ -818,6 +866,10 @@ body {
         margin-left: 2px;
     }
 
+    .form-layout .info .date .month-year #month {
+        margin-left: 4px;
+    }
+
     .form-layout .info .cvc {
         height: 92px;
         width: 164px;
@@ -826,7 +878,7 @@ body {
     }
 
     .form-layout .info .cvc input {
-        width: 93%;
+        width: 92%;
         height: 45px;
 
     }
@@ -844,8 +896,9 @@ body {
 
 }
 
+/* 
 @media screen and (max-width:717px) {
     .form-layout form .input .holder {
         color: var(--Very-dark-violet);
     }
-}
+} */
