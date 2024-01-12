@@ -46,25 +46,26 @@ const validateForm = () => {
     const red = "#FF5050";
 
     // Validate name input
-    if (name.value.trim() === "") {
-        name.style.borderColor = red;
+    if (document.getElementById("card-holder-name").value.trim() === "") {
+        document.getElementById("card-holder-name").style.borderColor = red;
         nameError.textContent = "Can’t be blank";
-    } else if (/^\d+$/.test(name.value)) {
-        name.style.borderColor = red;
+    } else if (/^\d+$/.test(document.getElementById("card-holder-name").value)) {
+        document.getElementById("card-holder-name").style.borderColor = red;
         nameError.textContent = "Wrong format";
     } else {
-        name.style.borderColor = "transparent";
+        document.getElementById("card-holder-name").style.borderColor =
+            "transparent";
     }
 
     // Validate card number input
     if (num.value.trim() === "") {
         num.style.borderColor = red;
         numError.textContent = "Can’t be blank";
-    } else if (!/^\d+$/.test(num.value)) {
+    } else if (/^\d+$/.test(num.value)) {
+        num.style.borderColor = "transparent";
+    } else {
         num.style.borderColor = red;
         numError.textContent = "Wrong format, numbers only";
-    } else {
-        num.style.borderColor = "transparent";
     }
 
     // Validate month input
@@ -109,11 +110,11 @@ const validateForm = () => {
     if (cvc.value.trim() === "") {
         cvc.style.borderColor = red;
         cvcError.textContent = "Can’t be blank";
-    } else if (!/^\d+$/.test(cvc.value)) {
+    } else if (/^\d+$/.test(cvc.value)) {
+        cvc.style.borderColor = "transparent";
+    } else {
         cvc.style.borderColor = red;
         cvcError.textContent = "Wrong format, numbers only";
-    } else {
-        cvc.style.borderColor = "transparent";
     }
 
     // If no errors, hide form and show thank you message
