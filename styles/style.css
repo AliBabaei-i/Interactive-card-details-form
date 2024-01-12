@@ -9,7 +9,7 @@
 }
 
 @font-face {
-    font-family: Space-Grotesk;
+    font-family: SpaceGrotesk;
     src: url("./SpaceGrotesk-Medium.ttf") format("ttf"),
         url("./SpaceGrotesk-Medium.woff") format("woff");
 }
@@ -28,7 +28,7 @@
 body {
     direction: ltr;
     font-size: 18px;
-    font-family: Space-Grotesk;
+    font-family: SpaceGrotesk;
     background-color: #f2f2f2;
     background-image: linear-gradient(to bottom right, #230b30, #4a1e43, #322250);
     background-repeat: no-repeat;
@@ -896,9 +896,3 @@ body {
 
 }
 
-/* 
-@media screen and (max-width:717px) {
-    .form-layout form .input .holder {
-        color: var(--Very-dark-violet);
-    }
-} */
