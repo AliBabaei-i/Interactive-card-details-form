@@ -9,12 +9,10 @@
 }
 
 @font-face {
-    font-family: SpaceGrotesk;
-    src: url("./SpaceGrotesk-Medium.ttf") format("ttf"),
-        url("./SpaceGrotesk-Medium.woff") format("woff"),
-        url("../fonts/SpaceGrotesk[wght].woff");
+    font-family: 'Space Grotesk Medium';
+    src: url('./SpaceGrotesk-Medium.woff') format('woff'),
+        url('./SpaceGrotesk-Medium.ttf') format('ttf');
 }
-
 
 * {
     overflow: hidden;
@@ -29,7 +27,7 @@
 body {
     direction: ltr;
     font-size: 18px;
-    font-family: SpaceGrotesk;
+    font-family:'Space Grotesk Medium';
     background-color: #f2f2f2;
     background-image: linear-gradient(to bottom right, #230b30, #4a1e43, #322250);
     background-repeat: no-repeat;
@@ -898,4 +896,3 @@ body {
     }
 
 }
-
