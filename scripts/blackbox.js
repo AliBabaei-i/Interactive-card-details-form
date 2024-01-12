@@ -16,9 +16,18 @@ document.getElementById("card-holder-name").addEventListener("input", (e) => {
         e.target.value === "" ? "JANE APPLESEED" : e.target.value;
 });
 num.addEventListener("input", (e) => {
-    numCard.innerText =
-        e.target.value === "" ? "0000 0000 0000 0000" : e.target.value;
+    const formattedCardNumber = insertSpace(
+        (numCard.innerText =
+            e.target.value === "" ? "0000000000000000" : e.target.value)
+    );
+    numCard.innerText = formattedCardNumber;
 });
+
+const insertSpace = (cardNumber) => {
+    const parts = cardNumber.match(/[\s\S]{1,4}/g);
+    return parts.join("  ");
+};
+
 month.addEventListener("input", (e) => {
     monthCard.innerText = e.target.value === "" ? "00" : e.target.value;
 });
@@ -49,7 +58,9 @@ const validateForm = () => {
     if (document.getElementById("card-holder-name").value.trim() === "") {
         document.getElementById("card-holder-name").style.borderColor = red;
         nameError.textContent = "Can’t be blank";
-    } else if (/^\d+$/.test(document.getElementById("card-holder-name").value)) {
+    } else if (
+        /^\d+$/.test(document.getElementById("card-holder-name").value)
+    ) {
         document.getElementById("card-holder-name").style.borderColor = red;
         nameError.textContent = "Wrong format";
     } else {
@@ -93,18 +104,6 @@ const validateForm = () => {
     } else {
         year.style.borderColor = "transparent";
     }
-
-    // Validate year input
-    // if (year.value.trim() === "") {
-    //     monthError.classList.add("error");
-    //     monthError.textContent = "Year cannot be empty.";
-    // } else if (!/^\d+$/.test(year.value)) {
-    //     monthError.classList.add("error");
-    //     monthError.textContent = "Year can only contain numbers.";
-    // } else if (year.value.length < 2 || year.value.length > 4) {
-    //     monthError.classList.add("error");
-    //     monthError.textContent = "Year must be between 2 and 4 digits.";
-    // }
 
     // Validate cvc input
     if (cvc.value.trim() === "") {
