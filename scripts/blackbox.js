@@ -1,5 +1,5 @@
 // Get form elements
-const name = document.getElementById("card-holder-name");
+const nameHolder = document.getElementById("card-holder-name");
 const num = document.getElementById("card-num");
 const month = document.getElementById("month");
 const year = document.getElementById("year");
@@ -11,14 +11,23 @@ const yearCard = document.getElementById("date-year");
 const monthCard = document.getElementById("date-month");
 const cvcCard = document.getElementById("cvc-num");
 // Replace inputs in to the Paragraph
-document.getElementById("card-holder-name").addEventListener("input", (e) => {
+nameHolder.addEventListener("input", (e) => {
     nameCard.innerText =
         e.target.value === "" ? "JANE APPLESEED" : e.target.value;
 });
 num.addEventListener("input", (e) => {
-    numCard.innerText =
-        e.target.value === "" ? "0000 0000 0000 0000" : e.target.value;
+    const formattedCardNumber = insertSpace(
+        (numCard.innerText =
+            e.target.value === "" ? "0000000000000000" : e.target.value)
+    );
+    numCard.innerText = formattedCardNumber;
 });
+
+const insertSpace = (cardNumber) => {
+    const parts = cardNumber.match(/[\s\S]{1,4}/g);
+    return parts.join("  ");
+};
+
 month.addEventListener("input", (e) => {
     monthCard.innerText = e.target.value === "" ? "00" : e.target.value;
 });
@@ -46,25 +55,25 @@ const validateForm = () => {
     const red = "#FF5050";
 
     // Validate name input
-    if (name.value.trim() === "") {
-        name.style.borderColor = red;
+    if (nameHolder.value.trim() === "") {
+        nameHolder.style.borderColor = red;
         nameError.textContent = "Can’t be blank";
-    } else if (/^\d+$/.test(name.value)) {
-        name.style.borderColor = red;
+    } else if (/^\d+$/.test(nameHolder.value)) {
+        nameHolder.style.borderColor = red;
         nameError.textContent = "Wrong format";
     } else {
-        name.style.borderColor = "transparent";
+        nameHolder.style.borderColor = "transparent";
     }
 
     // Validate card number input
     if (num.value.trim() === "") {
         num.style.borderColor = red;
         numError.textContent = "Can’t be blank";
-    } else if (!/^\d+$/.test(num.value)) {
+    } else if (/^\d+$/.test(num.value)) {
+        num.style.borderColor = "transparent";
+    } else {
         num.style.borderColor = red;
         numError.textContent = "Wrong format, numbers only";
-    } else {
-        num.style.borderColor = "transparent";
     }
 
     // Validate month input
@@ -109,11 +118,11 @@ const validateForm = () => {
     if (cvc.value.trim() === "") {
         cvc.style.borderColor = red;
         cvcError.textContent = "Can’t be blank";
-    } else if (!/^\d+$/.test(cvc.value)) {
+    } else if (/^\d+$/.test(cvc.value)) {
+        cvc.style.borderColor = "transparent";
+    } else {
         cvc.style.borderColor = red;
         cvcError.textContent = "Wrong format, numbers only";
-    } else {
-        cvc.style.borderColor = "transparent";
     }
 
     // If no errors, hide form and show thank you message
