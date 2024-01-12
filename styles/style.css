@@ -9,11 +9,10 @@
 }
 
 @font-face {
-    font-family: Space-Grotesk;
-    src: url("./SpaceGrotesk-Medium.ttf") format("ttf"),
-        url("./SpaceGrotesk-Medium.woff") format("woff");
+    font-family: 'Space Grotesk Medium';
+    src: url('./SpaceGrotesk-Medium.woff') format('woff'),
+        url('./SpaceGrotesk-Medium.ttf') format('ttf');
 }
-
 
 * {
     overflow: hidden;
@@ -28,7 +27,7 @@
 body {
     direction: ltr;
     font-size: 18px;
-    font-family: Space-Grotesk;
+    font-family:'Space Grotesk Medium';
     background-color: #f2f2f2;
     background-image: linear-gradient(to bottom right, #230b30, #4a1e43, #322250);
     background-repeat: no-repeat;
@@ -250,7 +249,7 @@ body {
 .form-layout .info .date {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
     height: 92px;
     width: 170px;
@@ -259,8 +258,8 @@ body {
 .form-layout .info .date .month-year {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    justify-content: flex-start;
+    height: 72%;
     width: 100%;
 }
 
@@ -276,14 +275,13 @@ body {
     color: var(--Very-dark-violet);
     font-weight: 500;
     margin-top: 10px;
-    margin-left: 4px;
     border: 2px solid;
     border-color: transparent;
     background-color: #fff;
 }
 
-.form-layout .info .date .month-year #year-error {
-    width: 84px;
+.form-layout .info .date .month-year #year {
+    margin-left: 8px;
 }
 
 .form-layout .info .cvc {
@@ -294,6 +292,7 @@ body {
     align-items: flex-start;
     justify-content: space-evenly;
     padding-right: 5px;
+
 }
 
 
@@ -430,6 +429,10 @@ body {
         width: 461px;
     }
 
+    .cards .back-image img {
+        width: 100%;
+    }
+
     .cards .back-image #cvc-num {
         right: 100;
     }
@@ -463,7 +466,7 @@ body {
     }
 
     .cards .back-image img {
-        width: 98%;
+        width: 100%;
         height: 243px;
     }
 
@@ -683,9 +686,10 @@ body {
         height: 45px;
     }
 
-    .form-layout .info .date .month-year #month {
-        margin-left: 9px;
+    .form-layout .input input {
+        width: 92%;
     }
+
 
     .form-layout .info .date .month-year {
 
@@ -719,7 +723,7 @@ body {
         height: 100%;
         width: 91%;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-around;
         margin-right: 24px;
         margin-left: 24px;
     }
@@ -809,7 +813,7 @@ body {
 
     .form-layout form .input {
         width: 100%;
-        height: 89px;
+        height: 101px;
         margin-bottom: 12px;
     }
 
@@ -834,15 +838,15 @@ body {
         width: 100%;
         height: 89px;
         margin-bottom: 5px;
-        margin-top: 12px;
+        margin-top: 15px;
     }
 
     .form-layout .info .date {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-        height: auto;
+        align-items: flex-start;
+        justify-content: space-between;
+        height: 92px;
         width: 161px;
     }
 
@@ -866,20 +870,17 @@ body {
         margin-left: 2px;
     }
 
-    .form-layout .info .date .month-year #month {
-        margin-left: 4px;
-    }
 
     .form-layout .info .cvc {
         height: 92px;
-        width: 164px;
+        width: 155px;
 
         padding-right: 3px;
     }
 
     .form-layout .info .cvc input {
-        width: 92%;
-        height: 45px;
+        width: 91%;
+        height: 47px;
 
     }
 
@@ -895,10 +896,3 @@ body {
     }
 
 }
-
-/* 
-@media screen and (max-width:717px) {
-    .form-layout form .input .holder {
-        color: var(--Very-dark-violet);
-    }
-} */
