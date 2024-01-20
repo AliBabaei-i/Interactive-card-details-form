@@ -143,7 +143,6 @@ body {
     width: 49%;
     display: flex;
     justify-content: left;
-    background-color: red;
 }
 
 .form-layout form {
