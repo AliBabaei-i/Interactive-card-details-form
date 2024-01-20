@@ -14,6 +14,13 @@ const cvcCard = document.getElementById("cvc-num");
 nameHolder.addEventListener("input", (e) => {
     nameCard.innerText =
         e.target.value === "" ? "JANE APPLESEED" : e.target.value;
+    if (e.target.value === "") {
+        nameCard.innerText = "JANE APPLESEED";
+    } else if (e.target.value.length > 16) {
+        nameCard.innerText = `${e.target.value.substring(0, 16)}...`;
+    } else {
+        nameCard.innerText = e.target.value;
+    }
 });
 num.addEventListener("input", (e) => {
     const formattedCardNumber = insertSpace(
@@ -95,12 +102,10 @@ const validateForm = () => {
     } else if (!/^\d+$/.test(year.value)) {
         year.style.borderColor = red;
         monthError.textContent = "Wrong format";
-    } 
-    // else if (year.value.length < 2 || year.value.length > 4) {
-    //     year.style.borderColor = red;
-    //     monthError.textContent = "Year must be between 2 and 4 digits.";
-    // } 
-    else {
+    } else if (year.value.length < 2 || year.value.length > 4) {
+        year.style.borderColor = red;
+        monthError.textContent = "Year must be between 2 and 4 digits.";
+    } else {
         year.style.borderColor = "transparent";
     }
 
