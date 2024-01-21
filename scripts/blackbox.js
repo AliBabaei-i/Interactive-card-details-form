@@ -14,6 +14,13 @@ const cvcCard = document.getElementById("cvc-num");
 nameHolder.addEventListener("input", (e) => {
     nameCard.innerText =
         e.target.value === "" ? "JANE APPLESEED" : e.target.value;
+    if (e.target.value === "") {
+        nameCard.innerText = "JANE APPLESEED";
+    } else if (e.target.value.length > 16) {
+        nameCard.innerText = `${e.target.value.substring(0, 16)}...`;
+    } else {
+        nameCard.innerText = e.target.value;
+    }
 });
 num.addEventListener("input", (e) => {
     const formattedCardNumber = insertSpace(
@@ -82,9 +89,10 @@ const validateForm = () => {
         monthError.textContent = "Can’t be blank";
     } else if (!/^\d+$/.test(month.value)) {
         month.style.borderColor = red;
-        monthError.textContent = "Wrong format, numbers only";
+        monthError.textContent = "Wrong format";
     } else if (month.value < 1 || month.value > 12) {
         month.style.borderColor = red;
+        monthError.style.fontSize = "10px";
         monthError.textContent = "Month must be between 1 and 12.";
     } else {
         month.style.borderColor = "transparent";
@@ -94,25 +102,14 @@ const validateForm = () => {
         monthError.textContent = "Can’t be blank";
     } else if (!/^\d+$/.test(year.value)) {
         year.style.borderColor = red;
-        monthError.textContent = "Wrong format, numbers only";
+        monthError.textContent = "Wrong format";
     } else if (year.value.length < 2 || year.value.length > 4) {
         year.style.borderColor = red;
-        monthError.textContent = "Year must be between 2 and 4 digits.";
+        monthError.style.fontSize = "11px";
+        monthError.textContent = "must be between 2 and 4 digits";
     } else {
         year.style.borderColor = "transparent";
     }
-
-    // Validate year input
-    // if (year.value.trim() === "") {
-    //     monthError.classList.add("error");
-    //     monthError.textContent = "Year cannot be empty.";
-    // } else if (!/^\d+$/.test(year.value)) {
-    //     monthError.classList.add("error");
-    //     monthError.textContent = "Year can only contain numbers.";
-    // } else if (year.value.length < 2 || year.value.length > 4) {
-    //     monthError.classList.add("error");
-    //     monthError.textContent = "Year must be between 2 and 4 digits.";
-    // }
 
     // Validate cvc input
     if (cvc.value.trim() === "") {
